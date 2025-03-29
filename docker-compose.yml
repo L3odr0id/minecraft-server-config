@@ -33,7 +33,6 @@ services:
         https://www.curseforge.com/minecraft/mc-mods/toggle-item-frames/files/5855964
         https://www.curseforge.com/minecraft/mc-mods/bluemap/files/5919130
         https://www.curseforge.com/minecraft/mc-mods/tschipcrafts-dynamic-lights-mod/files/5960422
-        https://www.curseforge.com/minecraft/customization/all-mob-heads/files/6333046
       MODRINTH_DOWNLOAD_DEPENDENCIES: required
       MODRINTH_PROJECTS: |
         blossomtpa:I6w3glev
@@ -43,6 +42,7 @@ services:
         datapack:players-drop-heads
         datapack:afk-display
         datapack:serversleep
+        datapack:mob-heads
       REMOVE_OLD_DATAPACKS: true
       DATAPACKS: |
         https://github.com/L3odr0id/minecraft-server-config/raw/refs/heads/main/datapacks/armor_stand_editor-v2.0.1.zip
