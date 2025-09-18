@@ -13,7 +13,7 @@ This setup is the ultimate solution: it automatically downloads the latest backu
 - `HUB_PASSWORD` - Your Docker Hub access token.
 - `DOCKER_IMAGE_TO_PULL` - The name of the Docker image to pull. Format: 'NICKNAME/REPO_NAME:TAG'
 
-If you don’t plan to upload backups, you can skip setting the login and password. It’s recommended to save these variables in a local `.env` file and use `source .env` to load them before starting the server.
+If you don’t want to upload backups, you can skip setting the login and password. It’s recommended to save these variables in a local `.env` file and use `source .env` to load them before starting the server.
 
 2. Download and start the Docker setup:
 Get the docker-compose.yml file and launch the setup.

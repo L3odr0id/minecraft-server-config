@@ -11,7 +11,7 @@ services:
       - "8100:8100" # Bluemap
     environment:
       EULA: "TRUE"
-      VERSION: "1.21.4"
+      VERSION: "1.21.6"
       TYPE: "FABRIC"
       INIT_MEMORY: 2G
       MAX_MEMORY: 6G
@@ -27,27 +27,26 @@ services:
       REMOVE_OLD_MODS: true
       CF_API_KEY: ${CF_API_KEY}
       CURSEFORGE_FILES: |
-        https://www.curseforge.com/minecraft/mc-mods/carpet/files/5960519
-        https://www.curseforge.com/minecraft/mc-mods/fabric-api/files/6036631
-        https://www.curseforge.com/minecraft/mc-mods/carpet-tis-addition/files/5963010
-        https://www.curseforge.com/minecraft/mc-mods/toggle-item-frames/files/5855964
-        https://www.curseforge.com/minecraft/mc-mods/bluemap/files/5919130
-        https://www.curseforge.com/minecraft/mc-mods/tschipcrafts-dynamic-lights-mod/files/5960422
+        https://www.curseforge.com/minecraft/mc-mods/tschipcrafts-dynamic-lights-mod/files/6867219
       MODRINTH_DOWNLOAD_DEPENDENCIES: required
       MODRINTH_PROJECTS: |
-        blossomtpa:I6w3glev
-        lithium:t1FlWYl9
-        sit!:LmDd9wsK
-        novaultlimit:4Tvt0wiY
-        servux:EQhfaAYE
+        fabric-api:F5TVHWcE
+        carpet:NXZ9k9lc
+        carpet-tis-addition:NE1coPWM
+        toggle-item-frames:flrUpODZ
+        bluemap:plVwynim
+        blossomtpa:ukRrxnXI
+        lithium:XWGBHYcB
+        otterlib:c1wkXVhH
+        sit!:yGaQnuwV
+        servux:zvqUUU4K
+        armorstandeditor:VXUPjv4p
         datapack:blazeandcaves-advancements-pack
         datapack:players-drop-heads
         datapack:afk-display
-        datapack:serversleep
+        datapack:sleep
         datapack:mob-heads
       REMOVE_OLD_DATAPACKS: true
-      DATAPACKS: |
-        https://github.com/L3odr0id/minecraft-server-config/raw/refs/heads/main/datapacks/armor_stand_editor-v2.0.1.zip
     volumes:
       - "${MC_DATA_PATH}:/data"
 
@@ -98,7 +97,7 @@ services:
       BACKUP_ON_STARTUP: false
       PAUSE_IF_NO_PLAYERS: true
       LINK_LATEST: true
-      EXCLUDES: bluemap/*,cache,logs,*.tmp,*.jar
+      EXCLUDES: bluemap/*,cache,*.tmp,*.jar
       SERVER_PORT: "${MC_SERVER_PORT}"
       DOCKER_IMAGE: "${HUB_REPO_NAME}:latest"
       POST_BACKUP_SCRIPT: |
