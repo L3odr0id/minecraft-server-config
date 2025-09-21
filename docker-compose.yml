@@ -11,7 +11,7 @@ services:
       - "8100:8100" # Bluemap
     environment:
       EULA: "TRUE"
-      VERSION: "1.21.6"
+      VERSION: "1.21.8"
       TYPE: "FABRIC"
       INIT_MEMORY: 2G
       MAX_MEMORY: 6G
@@ -28,18 +28,19 @@ services:
       CF_API_KEY: ${CF_API_KEY}
       CURSEFORGE_FILES: |
         https://www.curseforge.com/minecraft/mc-mods/tschipcrafts-dynamic-lights-mod/files/6867219
+        https://www.curseforge.com/minecraft/mc-mods/carpet/files/6713262
+        https://www.curseforge.com/minecraft/mc-mods/carpet-tis-addition/files/6997327
+        https://www.curseforge.com/minecraft/mc-mods/otterlib/files/6908970
       MODRINTH_DOWNLOAD_DEPENDENCIES: required
       MODRINTH_PROJECTS: |
-        fabric-api:F5TVHWcE
-        carpet:NXZ9k9lc
-        carpet-tis-addition:NE1coPWM
+        fabric-api:CF23l2iP
         toggle-item-frames:flrUpODZ
         bluemap:plVwynim
-        blossomtpa:ukRrxnXI
-        lithium:XWGBHYcB
-        otterlib:c1wkXVhH
-        sit!:yGaQnuwV
+        novaultlimit:5I1Anol0
+        tpa-utilities:YG7I089P
+        lithium:pDfTqezk
         servux:zvqUUU4K
+        sit!:yGaQnuwV
         armorstandeditor:VXUPjv4p
         datapack:blazeandcaves-advancements-pack
         datapack:players-drop-heads
