@@ -145,6 +145,8 @@ services:
               docker push $$TIMESTAMP_IMAGE
               docker push $$LATEST_IMAGE
               echo "Backup images pushed to $HUB_REPO_NAME"
+              docker rmi $$TIMESTAMP_IMAGE $$LATEST_IMAGE
+              echo "Local backup images were removed"
 
             else
               echo "Nothing happened. $$LAST_MOD_TIME | $$CURRENT_MOD_TIME "
