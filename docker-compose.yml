@@ -11,7 +11,7 @@ services:
       - "8100:8100" # Bluemap
     environment:
       EULA: "TRUE"
-      VERSION: "1.21.8"
+      VERSION: "1.21.10"
       TYPE: "FABRIC"
       INIT_MEMORY: 2G
       MAX_MEMORY: 6G
@@ -27,21 +27,23 @@ services:
       REMOVE_OLD_MODS: true
       CF_API_KEY: ${CF_API_KEY}
       CURSEFORGE_FILES: |
-        https://www.curseforge.com/minecraft/mc-mods/tschipcrafts-dynamic-lights-mod/files/6867219
-        https://www.curseforge.com/minecraft/mc-mods/carpet/files/6713262
-        https://www.curseforge.com/minecraft/mc-mods/carpet-tis-addition/files/6997327
-        https://www.curseforge.com/minecraft/mc-mods/otterlib/files/6908970
+        https://www.curseforge.com/minecraft/mc-mods/tschipcrafts-dynamic-lights-mod/files/7085776
+        https://www.curseforge.com/minecraft/mc-mods/carpet/files/7113642
+        https://www.curseforge.com/minecraft/mc-mods/carpet-tis-addition/files/7103891
+        https://www.curseforge.com/minecraft/mc-mods/otterlib/files/7078044
+		https://www.curseforge.com/minecraft/mc-mods/novaultlimit/files/6903217
       MODRINTH_DOWNLOAD_DEPENDENCIES: required
       MODRINTH_PROJECTS: |
-        fabric-api:CF23l2iP
-        toggle-item-frames:flrUpODZ
-        bluemap:plVwynim
-        novaultlimit:5I1Anol0
-        tpa-utilities:YG7I089P
-        lithium:pDfTqezk
-        servux:zvqUUU4K
-        sit!:yGaQnuwV
-        armorstandeditor:VXUPjv4p
+        fabric-api:qNm2IWMn
+        toggle-item-frames:w7OaOzm0
+        bluemap:d38XhzPO
+		bluemap-offline-player-markers-(fabric):bcZwEfeR
+		bluemap-banners:owJiZjX6
+        blossomtpa:u3w7YkDw
+        lithium:oGKQMdyZ
+        servux:1aOMm00f
+        sit!:cJvlmbfO
+        armorstandeditor:2SDNXDXK
         datapack:blazeandcaves-advancements-pack
         datapack:players-drop-heads
         datapack:afk-display
