@@ -1,5 +1,6 @@
 services:
   mc:
+    restart: unless-stopped
     image: itzg/minecraft-server
     tty: true
     stdin_open: true
@@ -54,6 +55,7 @@ services:
       - "${MC_DATA_PATH}:/data"
 
   terminal_dogma:
+    restart: unless-stopped
     image: alpine:latest
     volumes:
       - "./:/workspace"
@@ -89,6 +91,7 @@ services:
       - "${MC_BACKUPS_PATH}:/backups:ro"
 
   backups:
+    restart: unless-stopped
     image: itzg/mc-backup
     depends_on:
       mc:
@@ -110,6 +113,7 @@ services:
       - "${MC_BACKUPS_PATH}:/backups"
 
   watchdog:
+    restart: unless-stopped
     image: alpine:latest
     depends_on:
       terminal_dogma:
