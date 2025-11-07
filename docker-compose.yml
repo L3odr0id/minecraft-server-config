@@ -55,7 +55,6 @@ services:
       - "${MC_DATA_PATH}:/data"
 
   terminal_dogma:
-    restart: unless-stopped
     image: alpine:latest
     volumes:
       - "./:/workspace"
