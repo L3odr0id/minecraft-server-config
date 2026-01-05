@@ -48,7 +48,6 @@ services:
         datapack:blazeandcaves-advancements-pack
         datapack:players-drop-heads
         datapack:afk-announcer
-        datapack:sleep
         datapack:mob-heads
       REMOVE_OLD_DATAPACKS: true
     volumes:
