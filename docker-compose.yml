@@ -50,6 +50,8 @@ services:
         datapack:afk-announcer
         datapack:mob-heads
       REMOVE_OLD_DATAPACKS: true
+      DATAPACKS: |
+        https://github.com/L3odr0id/simple-sleep/releases/download/v1/simple-sleep-v1.zip
     volumes:
       - "${MC_DATA_PATH}:/data"
 
