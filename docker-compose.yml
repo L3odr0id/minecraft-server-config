@@ -49,6 +49,7 @@ services:
         datapack:players-drop-heads
         datapack:afk-announcer
         datapack:mob-heads
+        disconnect-packet-fix:Gv74xveQ
       REMOVE_OLD_DATAPACKS: true
       DATAPACKS: |
         https://github.com/L3odr0id/simple-sleep/releases/download/v1/simple-sleep-v1.zip
