@@ -12,7 +12,7 @@ services:
       - "8100:8100" # Bluemap
     environment:
       EULA: "TRUE"
-      VERSION: "1.21.10"
+      VERSION: "1.21.11"
       TYPE: "FABRIC"
       INIT_MEMORY: 2G
       MAX_MEMORY: 6G
@@ -28,28 +28,28 @@ services:
       REMOVE_OLD_MODS: true
       CF_API_KEY: ${CF_API_KEY}
       CURSEFORGE_FILES: |
-        https://www.curseforge.com/minecraft/mc-mods/tschipcrafts-dynamic-lights-mod/files/7085776
-        https://www.curseforge.com/minecraft/mc-mods/carpet/files/7113642
-        https://www.curseforge.com/minecraft/mc-mods/carpet-tis-addition/files/7103891
-        https://www.curseforge.com/minecraft/mc-mods/otterlib/files/7078044
-        https://www.curseforge.com/minecraft/mc-mods/novaultlimit/files/6903217
+        https://www.curseforge.com/minecraft/mc-mods/tschipcrafts-dynamic-lights-mod/files/7312874
+        https://www.curseforge.com/minecraft/mc-mods/carpet/files/7318937
+        https://www.curseforge.com/minecraft/mc-mods/carpet-tis-addition/files/7309912
+        https://www.curseforge.com/minecraft/mc-mods/otterlib/files/7314747
+        https://www.curseforge.com/minecraft/mc-mods/novaultlimit/files/7316129
       MODRINTH_DOWNLOAD_DEPENDENCIES: required
       MODRINTH_PROJECTS: |
-        fabric-api:qNm2IWMn
+        fabric-api:DdVHbeR1
         toggle-item-frames:w7OaOzm0
-        bluemap:d38XhzPO
+        bluemap:gpuTeXXq
         bluemap-offline-player-markers-(fabric):bcZwEfeR
-        bluemap-banners:owJiZjX6
-        blossomtpa:u3w7YkDw
-        lithium:oGKQMdyZ
+        bluemap-banners:K407Fo8o
+        blossomtpa:xy4C23w4
+        lithium:gl30uZvp
         servux:1aOMm00f
-        sit!:cJvlmbfO
-        armorstandeditor:2SDNXDXK
+        sit!:xy4C23w4
+        armorstandeditor:RzBDTvOT
+        disconnect-packet-fix:Gv74xveQ
         datapack:blazeandcaves-advancements-pack
         datapack:players-drop-heads
         datapack:afk-announcer
         datapack:mob-heads
-        disconnect-packet-fix:Gv74xveQ
       REMOVE_OLD_DATAPACKS: true
       DATAPACKS: |
         https://github.com/L3odr0id/simple-sleep/releases/download/v1/simple-sleep-v1.zip
