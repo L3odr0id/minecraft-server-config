@@ -20,3 +20,15 @@ Get the docker-compose.yml file and launch the setup.
 ```bash
 curl -o docker-compose.yml https://raw.githubusercontent.com/L3odr0id/minecraft-server-config/refs/heads/main/docker-compose.yml && docker compose up -d
 ```
+
+## To get the backup out of image
+
+1. Create container from image with dummy command
+```bash
+docker container create <image_id> echo "Hello, Docker!"
+```
+
+2. Copy from container
+```bash
+docker cp <container_id>:/data.tgz С:\local\path.tgz
+```
