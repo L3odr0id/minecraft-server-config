@@ -30,9 +30,8 @@ services:
       CURSEFORGE_FILES: |
         https://www.curseforge.com/minecraft/mc-mods/tschipcrafts-dynamic-lights-mod/files/7312874
         https://www.curseforge.com/minecraft/mc-mods/carpet/files/7318937
-        https://www.curseforge.com/minecraft/mc-mods/carpet-tis-addition/files/7309912
+        https://www.curseforge.com/minecraft/mc-mods/carpet-tis-addition/files/7605241
         https://www.curseforge.com/minecraft/mc-mods/otterlib/files/7314747
-        https://www.curseforge.com/minecraft/mc-mods/novaultlimit/files/7316129
       MODRINTH_DOWNLOAD_DEPENDENCIES: required
       MODRINTH_PROJECTS: |
         fabric-api:DdVHbeR1
