@@ -32,16 +32,16 @@ services:
         https://www.curseforge.com/minecraft/mc-mods/carpet/files/7318937
         https://www.curseforge.com/minecraft/mc-mods/carpet-tis-addition/files/7605241
         https://www.curseforge.com/minecraft/mc-mods/otterlib/files/7314747
+        https://www.curseforge.com/minecraft/mc-mods/fabric-api/files/7570021
       MODRINTH_DOWNLOAD_DEPENDENCIES: required
       MODRINTH_PROJECTS: |
-        fabric-api:DdVHbeR1
-        toggle-item-frames:w7OaOzm0
-        bluemap:gpuTeXXq
+        invisible-frames-mod:S48QrgU7
+        bluemap:TROfpX7m
         bluemap-offline-player-markers-(fabric):bcZwEfeR
         bluemap-banners:K407Fo8o
-        blossomtpa:xy4C23w4
-        lithium:gl30uZvp
-        servux:1aOMm00f
+        blossomtpa:l1xeJQw4
+        lithium:qvNsoO3l
+        servux:wdbe92T5
         sit!:xy4C23w4
         armorstandeditor:RzBDTvOT
         disconnect-packet-fix:Gv74xveQ
