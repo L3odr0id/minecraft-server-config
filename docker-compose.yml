@@ -128,19 +128,19 @@ services:
           apk update
           apk add --no-cache inotify-tools docker
           cd /backups
-          touch latest.tgz
-          LAST_MOD_TIME="$(stat -c='%Y' latest.tgz)"
+          touch latest.tar.gz
+          LAST_MOD_TIME="$(stat -c='%Y' latest.tar.gz)"
 
           while true; do
             sleep 360
-            CURRENT_MOD_TIME="$(stat -c='%Y' latest.tgz)"
+            CURRENT_MOD_TIME="$(stat -c='%Y' latest.tar.gz)"
 
             if [ "$$LAST_MOD_TIME" != "$$CURRENT_MOD_TIME" ]; then
               LAST_MOD_TIME="$$CURRENT_MOD_TIME"
               echo "Modification detected: executing commands..."
               cat <<EOF > Dockerfile
               FROM scratch
-              COPY latest.tgz /data.tgz
+              COPY latest.tar.gz /data.tar.gz
           EOF
 
               TIMESTAMP=$(date +%Y%m%d%H%M%S)
