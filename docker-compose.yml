@@ -51,7 +51,7 @@ services:
         datapack:mob-heads
       REMOVE_OLD_DATAPACKS: true
       DATAPACKS: |
-        https://github.com/L3odr0id/simple-sleep/releases/download/v3/simple-sleep-v3.zip
+        https://github.com/L3odr0id/simple-sleep/releases/download/v4/simple-sleep-v4-1.21.11.zip
     volumes:
       - "${MC_DATA_PATH}:/data"
 
