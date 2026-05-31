@@ -7,13 +7,19 @@
   },
   {
     "uuid": "ba50128c-0a09-453c-82a2-10bd0ea78d03",
-    "name": "Le0dr0id",
+    "name": "L30dr01d",
     "level": 4,
     "bypassesPlayerLimit": false
   },
   {
     "uuid": "5371e9be-f127-47ea-8ece-ad068d1058bf",
     "name": "TinyClayMan",
+    "level": 4,
+    "bypassesPlayerLimit": false
+  },
+  {
+    "uuid": "895bf2a4-40ae-4fc1-9673-1c8f05268a2b",
+    "name": "1_NoOne_1",
     "level": 4,
     "bypassesPlayerLimit": false
   }
