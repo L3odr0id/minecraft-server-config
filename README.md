@@ -18,7 +18,8 @@ If you don’t want to upload backups, you can skip setting the login and passwo
 2. Download and start the Docker setup:
 Get the docker-compose.yml file and launch the setup.
 ```bash
-curl -o docker-compose.yml https://raw.githubusercontent.com/L3odr0id/minecraft-server-config/refs/heads/main/docker-compose.yml && docker compose up -d
+curl -o docker-compose.yml https://raw.githubusercontent.com/L3odr0id/minecraft-server-config/refs/heads/main/docker-compose.yml
+docker compose up -d
 ```
 
 ## To copy the world backup from the image
@@ -37,4 +38,22 @@ docker cp <container_id>:/data.tgz С:\local\path.tgz
 
 ```
 /function bacap_rewards:update_score
+```
+
+## File Permissions
+
+When running the container, directory permissions can sometimes block the server from writing data. The [official documentation](https://docker-minecraft-server.readthedocs.io/en/latest/variables/) notes that the server runs under a user with UID=1000 and GUID=1000.
+
+Fix permissions:
+
+```bash
+source .env
+sudo chown -R 1000:1000 "$MC_DATA_PATH" "$MC_BACKUPS_PATH"
+sudo chmod -R u+rwX "$MC_DATA_PATH" "$MC_BACKUPS_PATH"
+```
+
+## Add your used to docker group
+
+```bash
+sudo usermod -aG docker $USER
 ```
