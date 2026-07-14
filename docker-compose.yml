@@ -12,7 +12,7 @@ services:
       - "8100:8100" # Bluemap
     environment:
       EULA: "TRUE"
-      VERSION: "1.21.11"
+      VERSION: "26.2"
       TYPE: "FABRIC"
       INIT_MEMORY: 2G
       MAX_MEMORY: 6G
@@ -28,30 +28,30 @@ services:
       REMOVE_OLD_MODS: true
       CF_API_KEY: ${CF_API_KEY}
       CURSEFORGE_FILES: |
-        https://www.curseforge.com/minecraft/mc-mods/tschipcrafts-dynamic-lights-mod/files/7312874
-        https://www.curseforge.com/minecraft/mc-mods/carpet/files/7318937
-        https://www.curseforge.com/minecraft/mc-mods/carpet-tis-addition/files/7605241
-        https://www.curseforge.com/minecraft/mc-mods/otterlib/files/7314747
-        https://www.curseforge.com/minecraft/mc-mods/fabric-api/files/7570021
+        tschipcrafts-dynamic-lights-mod
+        carpet
+        carpet-tis-addition
+        otterlib
+        fabric-api
       MODRINTH_DOWNLOAD_DEPENDENCIES: required
       MODRINTH_PROJECTS: |
-        invisible-frames-mod:S48QrgU7
-        bluemap:TROfpX7m
-        bluemap-offline-player-markers-(fabric):bcZwEfeR
-        bluemap-banners:K407Fo8o
-        blossomtpa:l1xeJQw4
-        lithium:qvNsoO3l
-        servux:wdbe92T5
-        sit!:xy4C23w4
-        armorstandeditor:RzBDTvOT
-        disconnect-packet-fix:Gv74xveQ
+        invisible-frames-mod
+        bluemap
+        bluemap-offline-player-markers-(fabric)
+        bluemap-banners
+        blossomtpa
+        lithium
+        servux
+        sit!
+        armorstandeditor
+        disconnect-packet-fix
+        jei:2OSg482P
         datapack:blazeandcaves-advancements-pack
         datapack:players-drop-heads
         datapack:afk-announcer
-        datapack:mob-heads
+        datapack:mob-heads:u6w1XzKt
+        datapack:simple-sleep
       REMOVE_OLD_DATAPACKS: true
-      DATAPACKS: |
-        https://github.com/L3odr0id/simple-sleep/releases/download/v4/simple-sleep-v4-1.21.11.zip
     volumes:
       - "${MC_DATA_PATH}:/data"
 
