@@ -45,6 +45,7 @@ services:
         sit!
         armorstandeditor
         disconnect-packet-fix
+        lod-server-support
         jei:2OSg482P
         datapack:blazeandcaves-advancements-pack
         datapack:players-drop-heads
