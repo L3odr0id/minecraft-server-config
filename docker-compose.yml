@@ -17,6 +17,8 @@ services:
       INIT_MEMORY: 2G
       MAX_MEMORY: 6G
       SERVER_PORT: "${MC_SERVER_PORT}"
+      ENABLE_QUERY: "true"
+      QUERY_PORT: "${MC_SERVER_PORT}"
       DIFFICULTY: "hard"
       ENABLE_COMMAND_BLOCK: true
       ONLINE_MODE: true
@@ -106,6 +108,7 @@ services:
       LINK_LATEST: true
       EXCLUDES: bluemap/*,cache,*.tmp,*.jar
       SERVER_PORT: "${MC_SERVER_PORT}"
+      QUERY_PORT: "${MC_SERVER_PORT}"
       DOCKER_IMAGE: "${HUB_REPO_NAME}:latest"
       POST_BACKUP_SCRIPT: |
         echo "DEBUG. The backup is finished"
@@ -129,33 +132,44 @@ services:
           apk update
           apk add --no-cache inotify-tools docker
           cd /backups
-          touch latest.tar.gz
-          LAST_MOD_TIME="$(stat -c='%Y' latest.tar.gz)"
+
+          # Wait for latest.tgz to be created by the backup service
+          while [ ! -e latest.tgz ]; do
+            echo "Waiting for latest.tgz to be created by backup service..."
+            sleep 3600
+          done
+
+          # Use dereferencing (-L) to check modification time of target file
+          LAST_MOD_TIME="$(stat -c='%Y' -L latest.tgz)"
 
           while true; do
-            sleep 360
-            CURRENT_MOD_TIME="$(stat -c='%Y' latest.tar.gz)"
+            sleep 3600
+            if [ -e latest.tgz ]; then
+              CURRENT_MOD_TIME="$(stat -c='%Y' -L latest.tgz)"
 
-            if [ "$$LAST_MOD_TIME" != "$$CURRENT_MOD_TIME" ]; then
-              LAST_MOD_TIME="$$CURRENT_MOD_TIME"
-              echo "Modification detected: executing commands..."
-              cat <<EOF > Dockerfile
+              if [ "$$LAST_MOD_TIME" != "$$CURRENT_MOD_TIME" ]; then
+                LAST_MOD_TIME="$$CURRENT_MOD_TIME"
+                echo "New backup detected! Building Docker image..."
+
+                cat <<EOF > Dockerfile
               FROM scratch
-              COPY latest.tar.gz /data.tar.gz
+              COPY latest.tgz /data.tgz
           EOF
 
-              TIMESTAMP=$(date +%Y%m%d%H%M%S)
-              TIMESTAMP_IMAGE="${HUB_REPO_NAME}:$$TIMESTAMP"
-              LATEST_IMAGE="${HUB_REPO_NAME}:latest"
-              docker build -t $$TIMESTAMP_IMAGE -t $$LATEST_IMAGE .
-              docker login --username "$HUB_LOGIN" --password "$HUB_PASSWORD"
-              docker push $$TIMESTAMP_IMAGE
-              docker push $$LATEST_IMAGE
-              echo "Backup images pushed to $HUB_REPO_NAME"
-              docker rmi $$TIMESTAMP_IMAGE $$LATEST_IMAGE
-              echo "Local backup images were removed"
+                TIMESTAMP=$$(date +%Y%m%d%H%M%S)
+                TIMESTAMP_IMAGE="${HUB_REPO_NAME}:$$TIMESTAMP"
+                LATEST_IMAGE="${HUB_REPO_NAME}:latest"
 
-            else
-              echo "Nothing happened. $$LAST_MOD_TIME | $$CURRENT_MOD_TIME "
+                docker build -t $$TIMESTAMP_IMAGE -t $$LATEST_IMAGE .
+                docker login --username "$$HUB_LOGIN" --password "$$HUB_PASSWORD"
+                docker push $$TIMESTAMP_IMAGE
+                docker push $$LATEST_IMAGE
+                echo "Backup images pushed to $HUB_REPO_NAME"
+                docker rmi $$TIMESTAMP_IMAGE $$LATEST_IMAGE
+                rm -f Dockerfile
+                echo "Local backup images were removed"
+              else
+                echo "Nothing happened. $$LAST_MOD_TIME | $$CURRENT_MOD_TIME "
+              fi
             fi
           done
